@@ -9,7 +9,7 @@ public class Task6 {
         if (i < 0){
             i = -i;
         }
-        int a = 2 + (i % 6);
+        int a = (i % 6) +2;
 
         System.out.println(a);
     }
