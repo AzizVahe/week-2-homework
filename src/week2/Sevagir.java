@@ -2,37 +2,29 @@ package week2;
 
 import java.util.Random;
 import java.util.Scanner;
-import java.util.SplittableRandom;
 
 public class Sevagir {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-//        Random random = new Random();
-        int zero = 0;
-        int positive = 0;
-        int negative = 0;
-        int n = scanner.nextInt();
-        int[] arr = new int[n];
-        System.out.println(" Please enter " + (n - 1) + " too");
-        arr[0] = n;
-        for (int i = 1; i < arr.length; i++) {
-            arr[i] = scanner.nextInt();
-            if (arr[i] == 0) {
-                zero++;
+        Random random = new Random();
+        int[] arr = new int[10];
+        for (int i = 0; i < arr.length; i++) {
+            int num = random.nextInt();
+            if (num < 0) {
+                num = -num;
             }
-            if (arr[i] > 0) {
-                positive++;
-            }
-            if (arr[i] < 0) {
-                negative++;
-            }
-            if (i == arr.length - 1) {
-                break;
-            }
-            System.out.println("The Numer of Negative Zeros is " + zero);
-            System.out.println("The Numer of Positive Numbers is " + positive);
-            System.out.println("The Numer of Negative Numbers is " + negative);
+            arr[i] = num % 10;
         }
+        int min = arr[0];
+        for(int i = 0; i < arr.length; i++){
+            if (min > arr [i]){
+                min = arr[i];
+            }
+        }
+        for (int i = 0; i < arr.length; i++){
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+        System.out.println(min);
 
     }
 }
